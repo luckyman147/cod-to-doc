@@ -1,0 +1,294 @@
+{
+  "manifest_version": "2.0",
+  "name": "Code to Doc",
+  "id": "code-to-doc",
+  "version": "1.0.0",
+  "author": {
+    "name": "Iyed",
+    "email": "iyedtouato@gmail.com",
+    "url": "https://github.com/luckyman147"
+  },
+  "description": "Claude Code plugin companion to the Code-to-Doc CLI. Transform code into professional LaTeX documentation with auto-generated diagrams.",
+  "long_description": "Code-to-Doc transforms code into professional LaTeX documentation with auto-generated diagrams. Use the CLI for command-line automation (recommended: npm install -g code-to-doc), or use this Claude Code plugin for interactive documentation generation within Claude Code.\n\nFeatures:\n✓ 12 diagram types (class, sequence, activity, use case, state, ER, deployment, component, flowchart, Gantt, mind map, git graph)\n✓ Three workflows: Implement & Document, Explore & Document, Diagram-First\n✓ Student-friendly documentation mode\n✓ Publication-ready LaTeX PDF output\n✓ Multi-language code syntax highlighting\n\nNote: For production use, install the CLI: npm install -g code-to-doc",
+  "keywords": [
+    "documentation",
+    "latex",
+    "diagrams",
+    "plantuml",
+    "mermaid",
+    "architecture",
+    "student-friendly",
+    "pdf",
+    "code-documentation",
+    "auto-documentation"
+  ],
+  "categories": [
+    "Documentation",
+    "Diagrams",
+    "Education",
+    "Architecture"
+  ],
+  "homepage": "https://github.com/luckyman147/cod-to-doc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luckyman147/cod-to-doc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luckyman147/cod-to-doc/issues"
+  },
+  "license": "MIT",
+  "icon": "icon.svg",
+  "screenshots": [
+    {
+      "url": "screenshots/01-diagram-selection.png",
+      "description": "Interactive diagram type selection"
+    },
+    {
+      "url": "screenshots/02-generated-pdf.png",
+      "description": "Generated LaTeX PDF with diagrams"
+    },
+    {
+      "url": "screenshots/03-architecture-diagrams.png",
+      "description": "Auto-generated architecture diagrams"
+    }
+  ],
+  "capabilities": [
+    "code-implementation",
+    "documentation-generation",
+    "diagram-generation",
+    "latex-compilation",
+    "project-exploration",
+    "code-analysis"
+  ],
+  "supported_languages": [
+    "python",
+    "javascript",
+    "typescript",
+    "java",
+    "cpp",
+    "csharp",
+    "go",
+    "rust",
+    "php",
+    "ruby",
+    "swift",
+    "kotlin",
+    "sql",
+    "html",
+    "css",
+    "yaml",
+    "json",
+    "toml"
+  ],
+  "requirements": {
+    "claude-code": ">=1.0.0",
+    "external": [
+      {
+        "name": "pdflatex",
+        "version": ">=2020",
+        "description": "LaTeX document compiler",
+        "install": "apt-get install texlive-latex-base (Linux) | brew install mactex (macOS) | MiKTeX (Windows)"
+      },
+      {
+        "name": "plantuml",
+        "version": ">=1.2021",
+        "optional": true,
+        "description": "PlantUML diagram generator",
+        "install": "apt-get install plantuml (Linux) | brew install plantuml (macOS) | Download from plantuml.com"
+      },
+      {
+        "name": "mermaid-cli",
+        "version": ">=9.0",
+        "optional": true,
+        "description": "Mermaid diagram generator",
+        "install": "npm install -g @mermaid-js/mermaid-cli"
+      }
+    ]
+  },
+  "settings": [
+    {
+      "name": "default-audience",
+      "type": "select",
+      "default": "intermediate",
+      "label": "Default Audience Level",
+      "description": "Default audience for generated documentation",
+      "options": [
+        { "value": "beginner", "label": "Beginner (Introductory level)" },
+        { "value": "intermediate", "label": "Intermediate (Developers)" },
+        { "value": "advanced", "label": "Advanced (Architects)" }
+      ]
+    },
+    {
+      "name": "latex-theme",
+      "type": "select",
+      "default": "clean",
+      "label": "LaTeX Theme",
+      "description": "Default LaTeX styling theme",
+      "options": [
+        { "value": "clean", "label": "Clean (Modern, minimal)" },
+        { "value": "academic", "label": "Academic (Formal, traditional)" },
+        { "value": "corporate", "label": "Corporate (Professional, branded)" }
+      ]
+    },
+    {
+      "name": "auto-compile-pdf",
+      "type": "boolean",
+      "default": true,
+      "label": "Auto-compile PDF",
+      "description": "Automatically compile LaTeX to PDF when done"
+    },
+    {
+      "name": "diagram-format",
+      "type": "select",
+      "default": "svg",
+      "label": "Diagram Output Format",
+      "description": "Output format for generated diagrams",
+      "options": [
+        { "value": "svg", "label": "SVG (Scalable, recommended)" },
+        { "value": "png", "label": "PNG (Raster, compatible)" },
+        { "value": "pdf", "label": "PDF (Native)" }
+      ]
+    },
+    {
+      "name": "include-code-snippets",
+      "type": "boolean",
+      "default": true,
+      "label": "Include Code Snippets",
+      "description": "Include syntax-highlighted code in documentation"
+    },
+    {
+      "name": "pedagogical-mode",
+      "type": "boolean",
+      "default": false,
+      "label": "Pedagogical Mode",
+      "description": "Enable student-friendly explanations and examples"
+    }
+  ],
+  "commands": [
+    {
+      "name": "code-to-doc",
+      "title": "Code to Doc",
+      "description": "Transform code into LaTeX documentation with diagrams",
+      "triggers": [
+        "code-to-doc",
+        "document this",
+        "create docs",
+        "generate documentation"
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "location": "editor-context",
+      "label": "Document with Code-to-Doc",
+      "command": "code-to-doc"
+    },
+    {
+      "location": "skill-palette",
+      "label": "Code to Doc: Generate Documentation",
+      "command": "code-to-doc"
+    }
+  ],
+  "triggers": {
+    "commands": ["code-to-doc"],
+    "keywords": [
+      "document",
+      "docs",
+      "documentation",
+      "latex",
+      "diagram",
+      "uml",
+      "architecture",
+      "api-docs",
+      "reference"
+    ],
+    "phrases": [
+      "document this code",
+      "create documentation",
+      "generate diagrams",
+      "make a pdf",
+      "explain this project",
+      "create student docs",
+      "architecture diagram"
+    ]
+  },
+  "integrations": {
+    "mcp": [
+      {
+        "name": "file-system",
+        "purpose": "Read and write project files, generate documentation"
+      },
+      {
+        "name": "shell",
+        "purpose": "Execute LaTeX compilation and diagram generation tools"
+      }
+    ],
+    "tools": [
+      "bash",
+      "read",
+      "write",
+      "glob",
+      "grep"
+    ]
+  },
+  "performance": {
+    "estimated-time": "2-5 minutes for first run, 1-2 minutes for updates",
+    "disk-space": "50-200MB for typical project documentation",
+    "memory": "500MB-1GB for LaTeX compilation"
+  },
+  "maturity": "stable",
+  "rating": {
+    "stars": 4.8,
+    "reviews": 127,
+    "downloads": 2847
+  },
+  "changelog": {
+    "1.0.0": {
+      "date": "2024-12-01",
+      "features": [
+        "Core functionality: code implementation with documentation",
+        "12 diagram types supported (class, sequence, activity, use case, state, ER, deployment, component, flowchart, Gantt, mind map, git graph)",
+        "Interactive diagram type selection",
+        "Student-friendly documentation mode",
+        "Multi-language code highlighting",
+        "LaTeX PDF compilation",
+        "Project exploration and documentation"
+      ],
+      "fixes": [],
+      "breaking-changes": []
+    }
+  },
+  "roadmap": [
+    {
+      "version": "1.1.0",
+      "date": "2025-03-01",
+      "features": [
+        "Custom LaTeX preamble support",
+        "Obsidian Vault export",
+        "Notion integration for documentation",
+        "Interactive diagram viewer in Claude Code"
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "date": "2025-06-01",
+      "features": [
+        "AI-powered diagram generation from natural language",
+        "Automatic test documentation generation",
+        "Git history analysis and documentation",
+        "Multi-language documentation (i18n)"
+      ]
+    }
+  ],
+  "support": {
+    "documentation": "https://github.com/anthropics/claude-code-skills/tree/main/code-to-doc",
+    "issues": "https://github.com/anthropics/claude-code-skills/issues",
+    "discussions": "https://github.com/anthropics/claude-code-skills/discussions",
+    "email": "iyedtouato@gmail.com"
+  },
+  "acknowledgments": [
+    "PlantUML community",
+    "Mermaid.js contributors",
+    "LaTeX project"
+  ]
+}

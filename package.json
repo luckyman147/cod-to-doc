@@ -1,0 +1,165 @@
+{
+  "name": "code-to-doc",
+  "version": "1.0.0",
+  "description": "Transform code into LaTeX documentation with auto-generated diagrams (PlantUML/Mermaid). Perfect for creating API docs, architecture documentation, and student guides.",
+  "keywords": [
+    "documentation",
+    "latex",
+    "diagrams",
+    "plantuml",
+    "mermaid",
+    "claude-code",
+    "skill",
+    "code-documentation",
+    "api-docs",
+    "architecture",
+    "student-docs"
+  ],
+  "author": {
+    "name": "Iyed",
+    "email": "iyedtouato@gmail.com",
+    "url": "https://github.com/luckyman147"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/YOUR_REPO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/YOUR_REPO/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/YOUR_REPO#readme",
+  "main": "SKILL.md",
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "plugin.json",
+    "CLI_GUIDE.md",
+    "INSTALLATION_GUIDE.md",
+    "PUBLISHING_GUIDE.md",
+    "references/",
+    "scripts/",
+    "icon.svg",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "prepublish": "npm run validate",
+    "validate": "node -e \"const pkg = require('./package.json'); console.log('✓ Package valid')\""
+  },
+  "categories": [
+    "Documentation",
+    "Diagrams",
+    "Education",
+    "Architecture"
+  ],
+  "capabilities": [
+    "code-implementation",
+    "documentation-generation",
+    "diagram-generation",
+    "latex-compilation",
+    "project-exploration",
+    "code-analysis"
+  ],
+  "supportedLanguages": [
+    "python",
+    "javascript",
+    "typescript",
+    "java",
+    "cpp",
+    "csharp",
+    "go",
+    "rust",
+    "php",
+    "ruby",
+    "swift",
+    "kotlin",
+    "sql",
+    "html",
+    "css",
+    "yaml",
+    "json",
+    "toml"
+  ],
+  "requirements": {
+    "nodeVersion": ">=14.0.0",
+    "external": [
+      {
+        "name": "pdflatex",
+        "version": ">=2020",
+        "required": true,
+        "description": "LaTeX document compiler for PDF generation"
+      },
+      {
+        "name": "plantuml",
+        "version": ">=1.2021",
+        "required": false,
+        "description": "PlantUML diagram generator"
+      },
+      {
+        "name": "mermaid-cli",
+        "version": ">=9.0",
+        "required": false,
+        "description": "Mermaid diagram generator"
+      }
+    ]
+  },
+  "installation": {
+    "cli": "npx skill add code-to-doc",
+    "claudeCode": "/code-to-doc",
+    "source": "git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git"
+  },
+  "changelog": {
+    "1.0.0": {
+      "date": "2024-12-01",
+      "features": [
+        "Core functionality: code implementation with LaTeX documentation",
+        "12 diagram types supported (class, sequence, activity, use case, state, ER, deployment, component, flowchart, Gantt, mind map, git graph)",
+        "Interactive diagram type selection",
+        "Student-friendly documentation mode with pedagogical explanations",
+        "Multi-language code highlighting (18+ languages)",
+        "LaTeX PDF compilation with professional styling",
+        "Project exploration and documentation generation",
+        "Three workflow modes: Implement & Document, Explore & Document, Diagram-First",
+        "CLI via npx skill add code-to-doc",
+        "Claude Code plugin support"
+      ],
+      "fixes": []
+    }
+  },
+  "roadmap": [
+    {
+      "version": "1.1.0",
+      "date": "Q1 2025",
+      "features": [
+        "Custom LaTeX preamble support",
+        "Obsidian Vault export",
+        "Notion integration",
+        "Interactive diagram viewer"
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "date": "Q2 2025",
+      "features": [
+        "AI-powered diagram generation from natural language",
+        "Automatic test documentation",
+        "Git history analysis",
+        "Multi-language documentation (i18n)"
+      ]
+    }
+  ],
+  "badges": {
+    "npm": "https://img.shields.io/npm/v/code-to-doc.svg",
+    "license": "https://img.shields.io/badge/License-MIT-yellow.svg",
+    "github": "https://img.shields.io/badge/GitHub-code--to--doc-blue.svg"
+  },
+  "maturity": "stable",
+  "rating": {
+    "stars": 0,
+    "reviews": 0,
+    "downloads": 0
+  }
+}

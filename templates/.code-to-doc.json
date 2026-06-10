@@ -1,0 +1,19 @@
+{
+  "audience": "intermediate",
+  "theme": "clean",
+  "output": "./docs",
+  "diagrams": ["class", "sequence", "state"],
+  "language": "auto",
+  "compilePdf": true,
+  "includeCodeSnippets": true,
+  "pedagogicalMode": false,
+  "diagramFormat": "svg",
+  "exclude": [
+    "node_modules",
+    ".git",
+    "build",
+    "dist",
+    "**/*.test.js",
+    "**/*.spec.ts"
+  ]
+}
